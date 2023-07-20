@@ -1,0 +1,24 @@
+<GridLayout>
+  <StackLayout
+    class="weatherForecast"
+    *ngFor="let product of products"
+    [nsRouterLink]="['/productdetails']"
+  >
+    <!-- <Label [text]="myTitle"></Label> -->
+
+    <Label
+      class="weather"
+      text="The weather is {{ product.attributes.Title }}"
+      textWrap="true"
+    ></Label>
+    <Label
+      class="temp"
+      text="The temperature is {{ product.attributes.Description }}"
+    ></Label>
+    <Label class="price" text="$ 399" textWrap="true"></Label>
+    <Image
+      class="weatherImage"
+      src="{{ product.attributes.ProductImage.data.attributes.url }}"
+    ></Image>
+  </StackLayout>
+</GridLayout>
